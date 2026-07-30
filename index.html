@@ -99,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-100 hidden md:block">
     <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785028512/Main_OKDAF_Nextgen_Pathway_Logo_gsef7m.png" alt="OKDAF Nextgen Pathway" class="h-10 w-auto object-contain" loading="eager">
+        <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785028512/Main_OKDAF_Nextgen_Pathway_Logo_gsef7m.png" alt="OKDAF Nextgen Pathway" class="h-10 w-auto object-contain" loading="eager" onerror="this.onerror=null;this.style.display='none';">
         <span class="font-bold text-navy-800 text-sm tracking-tight">OKDAF Nextgen Pathway</span>
       </a>
       <div class="flex items-center gap-3">
@@ -120,7 +120,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- SECTION 1: HERO -->
   <section class="relative pt-16 md:pt-20 pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-white via-amber-50/50 to-white">
     <div class="max-w-[800px] mx-auto text-center">
-      <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785028512/Main_OKDAF_Nextgen_Pathway_Logo_gsef7m.png" alt="OKDAF Nextgen Pathway Logo" class="w-36 md:w-40 mx-auto mb-4 object-contain" loading="eager">
+      <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785028512/Main_OKDAF_Nextgen_Pathway_Logo_gsef7m.png" alt="OKDAF Nextgen Pathway Logo" class="w-36 md:w-40 mx-auto mb-4 object-contain" loading="eager" onerror="this.onerror=null;this.style.display='none';document.getElementById('okdaf-hero-logo-fallback').style.display='block';">
+      <div id="okdaf-hero-logo-fallback" style="display:none;" class="font-bold text-navy-800 text-2xl mb-4">OKDAF Nextgen Pathway</div>
       <h1 class="text-[32px] md:text-[52px] font-bold leading-[1.1] text-navy-800 mb-6">Study in Turkey through <span class="text-gradient-gold">OKDAF NextGen Pathway</span></h1>
       <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-[680px] mx-auto mb-3">Six accredited Turkish universities are offering Nigerian students a direct path to internationally recognized degrees, with tuition starting from as low as $1000.</p>
       <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-[680px] mx-auto mb-6">This exclusive access is only available through our licensed pathway.</p>
@@ -202,7 +203,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="max-w-[600px] mx-auto py-10 border-b border-slate-200">
         <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Eazi Creatives Tech Enterprise is our Marketing Partner for this pathway</p>
         <div class="inline-block bg-white rounded-xl border border-slate-200 shadow-sm p-4">
-          <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785238240/Eazi_png_transparent_logo_2_1_piyue0.png" alt="Eazi Creatives Tech Enterprise Logo" class="w-[140px] h-auto mx-auto object-contain" loading="lazy">
+          <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785238240/Eazi_png_transparent_logo_2_1_piyue0.png" alt="Eazi Creatives Tech Enterprise Logo" class="w-[140px] h-auto mx-auto object-contain" loading="lazy" onerror="this.onerror=null;this.style.display='none';document.getElementById('okdaf-eazi-logo-fallback').style.display='block';">
+          <div id="okdaf-eazi-logo-fallback" style="display:none;" class="font-bold text-navy-800 text-sm text-center">Eazi Creatives Tech Enterprise</div>
         </div>
         <p class="text-xs font-semibold text-navy-800 max-w-[600px] mx-auto mt-4 leading-relaxed">Eazi Creatives Tech Enterprise is our Marketing partner for this pathway, managing our promotional campaigns and marketing communications.</p>
       </div>
@@ -490,14 +492,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="text-base font-bold text-navy-800 mb-2">Pay <span class="text-2xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
           <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
           <p class="text-slate-600 text-sm leading-relaxed mb-4">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
-          <div class="flex flex-col gap-2 max-w-[260px] mx-auto">
-            <a href="https://t.me/OKDAF_NextGen_Pathway_bot?start=OKDAF" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 gradient-navy-gold text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-              <i data-lucide="send" class="w-4 h-4"></i> Get Started on Telegram
-            </a>
-            <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-none cursor-pointer" style="background:#25D366;">
-              <i data-lucide="message-circle" class="w-4 h-4"></i> Get Started on WhatsApp
-            </button>
-          </div>
         </div>
         <div class="step-line-h relative text-center">
           <div class="w-14 h-14 gradient-navy-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
@@ -529,14 +523,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3 class="text-sm font-bold text-navy-800 mb-2">Pay <span class="text-xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
             <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
             <p class="text-slate-600 text-sm leading-relaxed mb-4">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
-            <div class="flex flex-col gap-2">
-              <a href="https://t.me/OKDAF_NextGen_Pathway_bot?start=OKDAF" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 gradient-navy-gold text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md">
-                <i data-lucide="send" class="w-4 h-4"></i> Get Started on Telegram
-              </a>
-              <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md border-none cursor-pointer" style="background:#25D366;">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> Get Started on WhatsApp
-              </button>
-            </div>
           </div>
         </div>
         <!-- Step 2 -->
