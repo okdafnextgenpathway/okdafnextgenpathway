@@ -7,7 +7,7 @@
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
   script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
-  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://static.cloudflareinsights.com;
+  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://static.cloudflareinsights.com https://res.cloudinary.com;
   img-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://res.cloudinary.com https://www.facebook.com data:;
   frame-src https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
@@ -87,7 +87,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@1.26.0/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@1.26.0/dist/umd/lucide.min.js" defer onerror="okdafLucideFallback()"></script>
+  <script>
+    // Fallback CDN in case unpkg is blocked/unreachable, so icons don't silently disappear
+    function okdafLucideFallback() {
+      if (window.lucide || document.getElementById('okdaf-lucide-fallback')) return;
+      var s = document.createElement('script');
+      s.id = 'okdaf-lucide-fallback';
+      s.src = 'https://cdn.jsdelivr.net/npm/lucide@1.26.0/dist/umd/lucide.min.js';
+      s.onload = function () { if (window.lucide) window.lucide.createIcons(); };
+      document.head.appendChild(s);
+    }
+  </script>
 </head>
 <body class="bg-white text-slate-800 antialiased">
   <!-- Google Tag Manager (noscript) -->
@@ -156,11 +167,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <!-- Card 2: WhatsApp (opens popup) -->
         <div class="bg-white rounded-2xl shadow-lg p-6 text-left border border-slate-100 hover:shadow-xl transition-shadow duration-300 flex flex-col">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#25D366;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:#075e54;">
             <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
           </div>
           <p class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">Prefer WhatsApp? Chat with us here.</p>
-          <button type="button" onclick="okdafOpenWa()" class="block w-full text-white font-semibold text-center px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-none cursor-pointer" style="background:#25D366;">Start on WhatsApp</button>
+          <button type="button" onclick="okdafOpenWa()" class="block w-full text-white font-semibold text-center px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-none cursor-pointer" style="background:#075e54;">Start on WhatsApp</button>
         </div>
         <!-- Card 3: Interest Form -->
         <div class="bg-white rounded-2xl shadow-md p-6 text-left border-2 border-navy-800/10 hover:shadow-lg transition-shadow duration-300 flex flex-col">
@@ -490,14 +501,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="text-base font-bold text-navy-800 mb-2">Pay <span class="text-2xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
           <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
           <p class="text-slate-600 text-sm leading-relaxed mb-4">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
-          <div class="flex flex-col gap-2 max-w-[260px] mx-auto">
-            <a href="https://t.me/OKDAF_NextGen_Pathway_bot?start=OKDAF" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 gradient-navy-gold text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-              <i data-lucide="send" class="w-4 h-4"></i> Get Started on Telegram
-            </a>
-            <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-none cursor-pointer" style="background:#25D366;">
-              <i data-lucide="message-circle" class="w-4 h-4"></i> Get Started on WhatsApp
-            </button>
-          </div>
         </div>
         <div class="step-line-h relative text-center">
           <div class="w-14 h-14 gradient-navy-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
@@ -528,15 +531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="bg-white rounded-xl shadow-md p-5 border border-slate-100">
             <h3 class="text-sm font-bold text-navy-800 mb-2">Pay <span class="text-xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
             <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
-            <div class="flex flex-col gap-2">
-              <a href="https://t.me/OKDAF_NextGen_Pathway_bot?start=OKDAF" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 gradient-navy-gold text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md">
-                <i data-lucide="send" class="w-4 h-4"></i> Get Started on Telegram
-              </a>
-              <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-sm px-4 py-2.5 rounded-lg shadow-md border-none cursor-pointer" style="background:#25D366;">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> Get Started on WhatsApp
-              </button>
-            </div>
+            <p class="text-slate-600 text-sm leading-relaxed">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
           </div>
         </div>
         <!-- Step 2 -->
@@ -568,7 +563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://t.me/OKDAF_NextGen_Pathway_bot?start=OKDAF" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 gradient-navy-gold text-white font-semibold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto">
           <i data-lucide="send" class="w-5 h-5"></i> Get Started for ₦2,500 on Telegram
         </a>
-        <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-none cursor-pointer w-full sm:w-auto" style="background:#25D366;">
+        <button type="button" onclick="okdafOpenWa()" class="inline-flex items-center justify-center gap-2 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-none cursor-pointer w-full sm:w-auto" style="background:#075e54;">
           <i data-lucide="message-circle" class="w-5 h-5"></i> Get Started for ₦2,500 on WhatsApp
         </button>
       </div>
@@ -881,8 +876,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 mt-6">
-        <a href="https://wa.me/2348153877919" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#25D366;">Chat Mr Michael on WhatsApp</a>
-        <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#25D366;">Chat Mr David on WhatsApp</a>
+        <a href="https://wa.me/2348153877919" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#075e54;">Chat Mr Michael on WhatsApp</a>
+        <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#075e54;">Chat Mr David on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -980,9 +975,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     })();
 
-    // Init Lucide icons
+    // Init Lucide icons — with a retry so a slow/blocked CDN doesn't leave icons blank
+    function okdafInitLucideIcons(attempt) {
+      attempt = attempt || 0;
+      if (window.lucide) {
+        window.lucide.createIcons();
+      } else if (attempt < 20) {
+        setTimeout(function () { okdafInitLucideIcons(attempt + 1); }, 250);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-      if (window.lucide) lucide.createIcons();
+      okdafInitLucideIcons();
 
       // Accordion
       const triggers = document.querySelectorAll('.accordion-trigger');
@@ -1012,6 +1016,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         });
       }
+    });
+
+    // Extra safety net: if the page finished loading and icons still didn't render
+    // (e.g. the lucide script tag failed silently), try once more on window load.
+    window.addEventListener('load', function () {
+      if (window.lucide) window.lucide.createIcons();
     });
   </script>
 </body>
