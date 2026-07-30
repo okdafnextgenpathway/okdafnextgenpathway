@@ -890,7 +890,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-  
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="okdafCookieBanner" class="okdaf-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="okdaf-cookie-inner">
+      <p class="text-[13px] text-slate-600 leading-relaxed">We use cookies to run this site and, with your permission, to measure traffic and improve our service (Google Analytics, Meta Pixel, Cloudflare Analytics). You can accept or reject non-essential cookies. Read our <a href="https://docs.google.com/document/d/14VOvPgJ3L1AtgZql1hCyn_2wPuoLD8AWZhuevFjbMt4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">Privacy Policy</a> for details.</p>
+      <div class="okdaf-cookie-actions">
+        <button type="button" onclick="okdafCookieReject()" class="okdaf-cookie-btn okdaf-cookie-btn-outline">Reject</button>
+        <button type="button" onclick="okdafCookieAccept()" class="okdaf-cookie-btn okdaf-cookie-btn-solid">Accept All</button>
+      </div>
+    </div>
+  </div>
+
   <style>
     /* WhatsApp popup */
     .okdaf-modal { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,25,41,0.65); align-items: center; justify-content: center; padding: 20px; }
@@ -950,13 +961,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function okdafCookieAccept() {
       try { localStorage.setItem(OKDAF_CONSENT_KEY, 'granted'); } catch (e) {}
       okdafApplyConsent(true);
-      document.getElementById('okdafCookieBanner').classList.remove('open');
+      var banner = document.getElementById('okdafCookieBanner');
+      if (banner) banner.classList.remove('open');
     }
 
     function okdafCookieReject() {
       try { localStorage.setItem(OKDAF_CONSENT_KEY, 'denied'); } catch (e) {}
       okdafApplyConsent(false);
-      document.getElementById('okdafCookieBanner').classList.remove('open');
+      var banner = document.getElementById('okdafCookieBanner');
+      if (banner) banner.classList.remove('open');
     }
 
     (function okdafInitConsent() {
@@ -968,7 +981,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         okdafApplyConsent(false);
       } else {
         document.addEventListener('DOMContentLoaded', function () {
-          document.getElementById('okdafCookieBanner').classList.add('open');
+          var banner = document.getElementById('okdafCookieBanner');
+          if (banner) banner.classList.add('open');
         });
       }
     })();
