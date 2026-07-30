@@ -3,16 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
-  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
-  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://static.cloudflareinsights.com https://res.cloudinary.com;
-  img-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://res.cloudinary.com https://www.facebook.com data:;
-  frame-src https://www.googletagmanager.com;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' data: https://fonts.gstatic.com;
-">
+  
+  <!-- FIXED CSP: Allows all necessary external resources -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
+    script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com data:;
+    img-src 'self' data: blob: https: https://res.cloudinary.com https://www.googletagmanager.com https://www.google-analytics.com https://www.facebook.com;
+    connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com https://connect.facebook.net https://static.cloudflareinsights.com https://res.cloudinary.com;
+    frame-src https://www.googletagmanager.com;
+    object-src 'none';
+    upgrade-insecure-requests;
+  ">
+  
   <title>OKDAF Nextgen Pathway — Turkey Scholarship for Nigerian Students</title>
   <meta name="description" content="Study in Turkey through OKDAF NextGen Pathway. Six accredited Turkish universities offering Nigerian students internationally recognized degrees, tuition from as low as $1000.">
   <link rel="icon" href="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785026170/favicon_vdkmnf.ico" type="image/x-icon">
