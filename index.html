@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
-  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com;
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
+  script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
   connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://static.cloudflareinsights.com https://res.cloudinary.com;
   img-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://res.cloudinary.com https://www.facebook.com data:;
   frame-src https://www.googletagmanager.com;
@@ -1105,7 +1105,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     })();
 
-    // Init Lucide icons — with a retry so a slow/blocked CDN doesn't leave icons blank
+    // Init Lucide icons — with a retry so a slow/blocked CDN doesn't leave icons blank.
+    // NOTE: no MutationObserver here on purpose — calling createIcons() from inside an
+    // observer that watches the whole <body> re-triggers itself every time createIcons()
+    // replaces an <i> tag with an <svg>, creating an infinite mutation loop that pegs the
+    // CPU and freezes all clicks. That was the cause of the page hanging.
     function okdafInitLucideIcons(attempt) {
       attempt = attempt || 0;
       if (window.lucide) {
@@ -1117,17 +1121,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     document.addEventListener('DOMContentLoaded', function() {
       okdafInitLucideIcons();
-
-      if (window.lucide) {
-          const observer = new MutationObserver(() => {
-              lucide.createIcons();
-          });
-
-          observer.observe(document.body, {
-              childList: true,
-              subtree: true
-          });
-      }
 
       // Accordion
       const triggers = document.querySelectorAll('.accordion-trigger');
