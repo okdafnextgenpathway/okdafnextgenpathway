@@ -291,7 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <i data-lucide="file-text" class="w-6 h-6 text-navy-800"></i>
           </div>
           <p class="text-slate-600 text-[15px] leading-relaxed mb-5 flex-1">Not ready to commit yet? Fill the Interest Form and our team will stay in touch and follow up when the time is right for you.</p>
-          <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" class="block w-full border-2 border-navy-800 text-navy-800 font-semibold text-center px-6 py-3.5 rounded-xl hover:bg-navy-800 hover:text-white transition-all duration-300">Fill Interest Form</a>
+          <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" data-source="hero" class="block w-full border-2 border-navy-800 text-navy-800 font-semibold text-center px-6 py-3.5 rounded-xl hover:bg-navy-800 hover:text-white transition-all duration-300">Fill Interest Form</a>
         </div>
       </div>
 
@@ -956,7 +956,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- STEP 1 -->
         <div class="mb-8">
           <p><strong class="text-navy-800">Step 1:</strong> Fill out the <strong>Turkiye 2026 Intake – Student Profile & Consent Form</strong><br>
-          <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" class="underline text-navy-800 break-words">https://forms.gle/24qApFC74pTdgpqc6</a></p>
+          <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" data-source="wa-modal" class="underline text-navy-800 break-words">https://forms.gle/24qApFC74pTdgpqc6</a></p>
         </div>
 
         <!-- STEP 2 -->
@@ -1044,13 +1044,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     // WhatsApp popup controls
     function okdafOpenWa() {
-      document.getElementById('okdafWaModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
+  if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'WhatsApp Button' });
+  document.getElementById('okdafWaModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
     }
     function okdafCloseWa() {
       document.getElementById('okdafWaModal').classList.remove('open');
       document.body.style.overflow = '';
     }
+    document.addEventListener('click', function (e) {
+  var telegramLink = e.target.closest('a[href*="t.me/OKDAF_NextGen_Pathway_bot"]');
+  if (telegramLink && typeof fbq === 'function') {
+    fbq('track', 'Lead', { content_name: 'Telegram Button' });
+  }
+
+  var interestForm = e.target.closest('a[href*="forms.gle/9Kcmiqv9AaTxnD5h7"]');
+  if (interestForm && typeof fbq === 'function') {
+    fbq('track', 'Lead', { content_name: 'Interest Form Button' });
+  }
+  var studentProfileForm = e.target.closest('a[href*="forms.gle/24qApFC74pTdgpqc6"]');
+  if (studentProfileForm && typeof fbq === 'function') {
+    var source = studentProfileForm.getAttribute('data-source') || 'unknown';
+    fbq('track', 'Lead', { content_name: 'Student Profile Form (' + source + ')' });
+  }
+});
     window.addEventListener('click', function (e) {
       if (e.target && e.target.id === 'okdafWaModal') okdafCloseWa();
     });
