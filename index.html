@@ -7,9 +7,10 @@
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
   script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://static.cloudflareinsights.com https://unpkg.com https://cdn.jsdelivr.net;
-  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://res.cloudinary.com;
-  img-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://res.cloudinary.com https://www.facebook.com data:;
-  frame-src https://www.googletagmanager.com;
+  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://region1.google-analytics.com https://www.facebook.com https://graph.facebook.com https://*.fbcdn.net https://static.cloudflareinsights.com https://cloudflareinsights.com https://res.cloudinary.com;
+  img-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://res.cloudinary.com https://www.facebook.com https://*.fbcdn.net data:;
+  frame-src https://www.googletagmanager.com https://www.facebook.com https://web.facebook.com https://staticxx.facebook.com;
+  media-src 'self' https://res.cloudinary.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' data: https://fonts.gstatic.com;
 ">
@@ -249,8 +250,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-[680px] mx-auto mb-6">This exclusive access is only available through our licensed pathway.</p>
 
       <!-- Intake Info -->
-      <div class="max-w-[600px] mx-auto mb-10 space-y-3">
-        <div>
+      <div class="max-w-[600px] mx-auto mb-8 space-y-4">
+        <div class="bg-white rounded-2xl shadow-md border border-slate-100 p-5">
           <span class="text-xs md:text-sm font-bold text-navy-800 uppercase tracking-widest">2026/2027 Intake</span>
           <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-1">
             <span class="text-xs md:text-sm text-slate-500 uppercase tracking-wide">Undergraduate & Postgraduate: July – October</span>
@@ -258,14 +259,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="text-xs md:text-sm text-slate-500 uppercase tracking-wide">All Departments Except Medicine</span>
           </div>
         </div>
-        <div>
+        <div class="bg-white rounded-2xl shadow-md border border-slate-100 p-5">
           <span class="text-xs md:text-sm font-bold text-navy-800 uppercase tracking-widest">2027 Spring Semester</span>
           <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-1">
             <span class="text-xs md:text-sm text-slate-500 uppercase tracking-wide">Undergraduate & Postgraduate: February 2027</span>
           </div>
         </div>
+        <div class="bg-gold-400/10 border-2 border-gold-400 rounded-2xl shadow-md p-5">
+          <p class="text-base md:text-lg font-semibold text-navy-800">Apply now and secure your spot.</p>
+        </div>
       </div>
-      <p class="text-base md:text-lg font-semibold text-navy-800 mb-8">Apply now and secure your spot.</p>
 
       <!-- Three Action Cards -->
       <div class="grid md:grid-cols-3 gap-4 md:gap-5 max-w-[960px] mx-auto items-stretch">
@@ -305,35 +308,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- VIDEO -->
+  <section class="py-12 px-4 sm:px-6 lg:px-8 bg-slate-50">
+    <div class="max-w-[900px] mx-auto">
+      <div class="text-center mb-6">
+        <h2 class="text-[28px] md:text-[40px] font-bold text-navy-800">
+          Your Path to Studying in Turkey Starts Here
+        </h2>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          class="w-full h-auto block"
+          poster="https://res.cloudinary.com/g0wxcvhs/video/upload/v1786589448/University_toqoul.jpg">
+          <source src="https://res.cloudinary.com/g0wxcvhs/video/upload/v1786589448/University_toqoul.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 2: OPERATIONS PARTNER STRIP -->
   <section class="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50/60 border-y border-slate-100">
-    <div class="max-w-[1200px] mx-auto text-center">
+    <div class="max-w-[1200px] mx-auto">
 
-      <!-- Marsfield Block -->
-      <div class="max-w-[600px] mx-auto pb-10 border-b border-slate-200">
-        <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Marsfield LP is our official Payment, Operations & Compliance Partner for this pathway</p>
-        <div>
-          <a href="http://www.marsfield-lp.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-800 border border-navy-800/20 px-4 py-2 rounded-full hover:bg-navy-800 hover:text-white transition-all duration-300">
-            Visit Marsfield LP
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
+      <div class="grid md:grid-cols-3 gap-5 items-stretch text-center">
+
+        <!-- Marsfield Block -->
+        <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col">
+          <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Marsfield LP is our official Payment, Operations & Compliance Partner for this pathway</p>
+          <div>
+            <a href="http://www.marsfield-lp.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-800 border border-navy-800/20 px-4 py-2 rounded-full hover:bg-navy-800 hover:text-white transition-all duration-300">
+              Visit Marsfield LP
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <p class="text-xs font-semibold text-navy-800 mx-auto mt-4 leading-relaxed">Marsfield LP manages payment processing, selected operational support, and compliance-related administrative processes. It does not provide legal representation, immigration advice, or admissions decisions.</p>
         </div>
-        <p class="text-xs font-semibold text-navy-800 max-w-[600px] mx-auto mt-4 leading-relaxed">Marsfield LP manages payment processing, selected operational support, and compliance-related administrative processes. It does not provide legal representation, immigration advice, or admissions decisions.</p>
-      </div>
 
-      <!-- Eazi Creatives Block -->
-      <div class="max-w-[600px] mx-auto py-10 border-b border-slate-200">
-        <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Eazi Creatives Tech Enterprise is our Marketing Partner for this pathway</p>
-        <div class="inline-block bg-white rounded-xl border border-slate-200 shadow-sm p-4">
-          <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785238240/Eazi_png_transparent_logo_2_1_piyue0.png" alt="Eazi Creatives Tech Enterprise Logo" class="w-[140px] h-auto mx-auto object-contain" loading="lazy">
+        <!-- Eazi Creatives Block -->
+        <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col">
+          <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Eazi Creatives Tech Enterprise is our Marketing Partner for this pathway</p>
+          <div class="inline-block bg-white rounded-xl border border-slate-200 shadow-sm p-4 mx-auto">
+            <img src="https://res.cloudinary.com/g0wxcvhs/image/upload/v1785238240/Eazi_png_transparent_logo_2_1_piyue0.png" alt="Eazi Creatives Tech Enterprise Logo" class="w-[140px] h-auto mx-auto object-contain" loading="lazy">
+          </div>
+          <p class="text-xs font-semibold text-navy-800 mx-auto mt-4 leading-relaxed">Eazi Creatives Tech Enterprise is our Marketing partner for this pathway, managing our promotional campaigns and marketing communications.</p>
         </div>
-        <p class="text-xs font-semibold text-navy-800 max-w-[600px] mx-auto mt-4 leading-relaxed">Eazi Creatives Tech Enterprise is our Marketing partner for this pathway, managing our promotional campaigns and marketing communications.</p>
-      </div>
 
-      <!-- Istanbul World Block -->
-      <div class="max-w-[600px] mx-auto pt-10">
-        <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Our Education Recruitment & Consulting Partner</p>
-        <p class="text-xs font-semibold text-navy-800 max-w-[600px] mx-auto leading-relaxed">Our education recruitment and consulting partner for this pathway is Istanbul World Egitim Danismanlik Ltd. Sti., based in Istanbul, Turkey.</p>
+        <!-- Istanbul World Block -->
+        <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col justify-center">
+          <p class="text-[13px] uppercase tracking-[1px] text-slate-500 font-medium mb-3">Our Education Recruitment & Consulting Partner</p>
+          <p class="text-xs font-semibold text-navy-800 mx-auto leading-relaxed">Our education recruitment and consulting partner for this pathway is Istanbul World Egitim Danismanlik Ltd. Sti., based in Istanbul, Turkey.</p>
+        </div>
+
       </div>
 
     </div>
@@ -609,14 +639,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <h3 class="text-base font-bold text-navy-800 mb-2">Pay <span class="text-2xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
           <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
+          <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-d1">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
+          <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-d1', this)">Read more</button>
         </div>
         <div class="step-line-h relative text-center">
           <div class="w-14 h-14 gradient-navy-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
             <span class="text-white font-bold text-lg">2</span>
           </div>
           <h3 class="text-base font-bold text-navy-800 mb-2">Attend Your Scholarship Consultancy Webinar</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">This is where we reveal the names, scholarships, percentages, special offers, visa packages, cost breakdown, and the consultancy team in Istanbul that will receive you and get you settled. This session is valued at <span class="font-semibold">₦200,000</span> but has been discounted to <span class="font-semibold">₦30,000</span>. Note: this offer is valid only for our first 200 applicants. The payment secures a seat for you in the consultancy webinar. You will complete the consultancy webinar registration and consent form to confirm your seat.</p>
+          <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-d2">This is where we reveal the names, scholarships, percentages, special offers, visa packages, cost breakdown, and the consultancy team in Istanbul that will receive you and get you settled. This session is valued at <span class="font-semibold">₦200,000</span> but has been discounted to <span class="font-semibold">₦30,000</span>. Note: this offer is valid only for our first 200 applicants. The payment secures a seat for you in the consultancy webinar. You will complete the consultancy webinar registration and consent form to confirm your seat.</p>
+          <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-d2', this)">Read more</button>
           <p class="text-2xl text-gold-500 font-bold mt-2">₦30,000</p>
           <p class="text-xs text-slate-400 mt-1">approx. $21.9</p>
         </div>
@@ -625,7 +657,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="text-white font-bold text-lg">3</span>
           </div>
           <h3 class="text-base font-bold text-navy-800 mb-2">Begin Document Processing</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Once you've seen everything in the webinar and decided this is right for you, the next step is to fill out the Academic & Travel Documents Upload Form. From there, we review your documents and begin submission to your chosen university. Once your admission letter is secured, you'll be introduced to our banking and travel consultants to help prepare your finances and flights ahead of departure.</p>
+          <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-d3">Once you've seen everything in the webinar and decided this is right for you, the next step is to fill out the Academic & Travel Documents Upload Form. From there, we review your documents and begin submission to your chosen university. Once your admission letter is secured, you'll be introduced to our banking and travel consultants to help prepare your finances and flights ahead of departure.</p>
+          <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-d3', this)">Read more</button>
         </div>
       </div>
 
@@ -640,7 +673,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="bg-white rounded-xl shadow-md p-5 border border-slate-100">
             <h3 class="text-sm font-bold text-navy-800 mb-2">Pay <span class="text-xl text-gold-500 font-bold">₦2,500</span> Pathway Commitment Fee</h3>
             <p class="text-xs text-slate-400 mb-2">approx. $1.83 &middot; subject to fluctuations in market rate</p>
-            <p class="text-slate-600 text-sm leading-relaxed">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
+            <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-m1">Confirms your commitment and filters out non-serious enquiries, while securing two things at once: instant access to our Free Pathway Guide, and your seat in our Free Preview Webinar. The Guide gives you a sneak peek of what's covered live, and works as a standalone option if you'd rather skip the preview and go straight to deciding. Either way, both exist to prepare you for the main Scholarship Consultancy Webinar, where the real numbers are revealed. You'll also complete the 'Turkiye 2026 Intake – Student Profile & Consent Form' at this stage.</p>
+            <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-m1', this)">Read more</button>
           </div>
         </div>
         <!-- Step 2 -->
@@ -650,7 +684,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="bg-white rounded-xl shadow-md p-5 border border-slate-100">
             <h3 class="text-sm font-bold text-navy-800 mb-2">Attend Your Scholarship Consultancy Webinar</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">This is where we reveal the names, scholarships, percentages, special offers, visa packages, cost breakdown, and the consultancy team in Istanbul that will receive you and get you settled. This session is valued at <span class="font-semibold">₦200,000</span> but has been discounted to <span class="font-semibold">₦30,000</span>. Note: this offer is valid only for our first 200 applicants. The payment secures a seat for you in the consultancy webinar. You will complete the consultancy webinar registration and consent form to confirm your seat.</p>
+            <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-m2">This is where we reveal the names, scholarships, percentages, special offers, visa packages, cost breakdown, and the consultancy team in Istanbul that will receive you and get you settled. This session is valued at <span class="font-semibold">₦200,000</span> but has been discounted to <span class="font-semibold">₦30,000</span>. Note: this offer is valid only for our first 200 applicants. The payment secures a seat for you in the consultancy webinar. You will complete the consultancy webinar registration and consent form to confirm your seat.</p>
+            <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-m2', this)">Read more</button>
             <p class="text-xl text-gold-500 font-bold mt-2">₦30,000</p>
             <p class="text-xs text-slate-400 mt-1">approx. $21.9</p>
           </div>
@@ -662,7 +697,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="bg-white rounded-xl shadow-md p-5 border border-slate-100">
             <h3 class="text-sm font-bold text-navy-800 mb-2">Begin Document Processing</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Once you've seen everything in the webinar and decided this is right for you, the next step is to fill out the Academic & Travel Documents Upload Form. From there, we review your documents and begin submission to your chosen university. Once your admission letter is secured, you'll be introduced to our banking and travel consultants to help prepare your finances and flights ahead of departure.</p>
+            <p class="okdaf-stage-text text-slate-600 text-sm leading-relaxed mb-1" id="okdaf-stage-m3">Once you've seen everything in the webinar and decided this is right for you, the next step is to fill out the Academic & Travel Documents Upload Form. From there, we review your documents and begin submission to your chosen university. Once your admission letter is secured, you'll be introduced to our banking and travel consultants to help prepare your finances and flights ahead of departure.</p>
+            <button type="button" class="okdaf-readmore-btn" onclick="okdafToggleStage('okdaf-stage-m3', this)">Read more</button>
           </div>
         </div>
       </div>
@@ -943,57 +979,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- WHATSAPP POPUP -->
   <div id="okdafWaModal" class="okdaf-modal" role="dialog" aria-modal="true" aria-labelledby="okdafWaTitle">
-    <div class="okdaf-modal-content">
-      <button type="button" class="okdaf-modal-close" onclick="okdafCloseWa()" aria-label="Close">&times;</button>
-      <h3 id="okdafWaTitle" class="text-xl font-bold text-navy-800 mb-1">Welcome to OKDAF NextGen Pathway 🎓</h3>
-      <p class="text-sm text-slate-500 mb-5">Here's how to get started:</p>
+    <div class="okdaf-modal-content okdaf-wa-modal-content">
 
-      <div class="text-[15px] text-slate-600 leading-[1.7]">
+      <button type="button" class="okdaf-modal-close" onclick="okdafCloseWa()" aria-label="Close">&times;</button>
+
+      <div class="okdaf-wa-header">
+        <h3 id="okdafWaTitle" class="text-xl font-bold text-navy-800 mb-1">Welcome to OKDAF NextGen Pathway 🎓</h3>
+        <p class="text-sm text-slate-500">Here's how to get started:</p>
+      </div>
+
+      <div class="okdaf-wa-steps">
 
         <!-- STEP 1 -->
-        <div class="mb-8">
-          <p><strong class="text-navy-800">Step 1:</strong> Fill out the <strong>Turkiye 2026 Intake – Student Profile & Consent Form</strong><br>
-          <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" data-source="wa-modal" class="underline text-navy-800 break-words">https://forms.gle/24qApFC74pTdgpqc6</a></p>
+        <div class="okdaf-wa-step">
+          <div class="okdaf-wa-step-num">1</div>
+          <div class="okdaf-wa-step-body">
+            <p class="text-[15px] text-slate-600 leading-[1.7]">Fill out the <strong class="text-navy-800">Turkiye 2026 Intake – Student Profile & Consent Form</strong><br>
+            <a href="https://forms.gle/24qApFC74pTdgpqc6" target="_blank" rel="noopener noreferrer" data-source="wa-modal" class="underline text-navy-800 break-words">https://forms.gle/24qApFC74pTdgpqc6</a></p>
+          </div>
         </div>
 
         <!-- STEP 2 -->
-        <div class="mb-8">
-          <p><strong class="text-navy-800">Step 2:</strong> Pay <strong>₦2,500</strong> to the account below:<br>
-          <strong>Account Number:</strong> 1016833264<br>
-          <strong>Account Name:</strong> Marsfield LP (Operations)<br>
-          <strong>Bank:</strong> Zenith Bank</p>
-          <p class="italic text-slate-500 mt-2">Please note this fee is non-refundable once payment is confirmed.</p>
-          <p class="mt-3">Kindly send your payment receipt to one of our staff below:</p>
+        <div class="okdaf-wa-step">
+          <div class="okdaf-wa-step-num">2</div>
+          <div class="okdaf-wa-step-body">
+            <p class="text-[15px] text-slate-600 leading-[1.7]">Pay <strong class="text-navy-800">₦2,500</strong> to the account below:</p>
 
-          <p class="mt-2"><strong class="text-navy-800">Option A – WhatsApp:</strong><br>
-          Mr Michael <span class="italic">[Eazi Creatives Tech Enterprise]</span>: <a href="https://wa.me/2348153877919" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0815 387 7919</a><br>
-          Mr David: <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0803 632 1885</a></p>
+            <div class="okdaf-wa-bankbox">
+              <p class="text-[15px] text-slate-600 leading-[1.7]"><strong>Account Number:</strong> 1016833264<br>
+              <strong>Account Name:</strong> Marsfield LP (Operations)<br>
+              <strong>Bank:</strong> Zenith Bank</p>
+            </div>
 
-          <p class="mt-2"><strong class="text-navy-800">Option B – Telegram:</strong><br>
-          Mr Michael <span class="italic">[Eazi Creatives Tech Enterprise]</span>: <a href="https://t.me/+2348153877919" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348153877919</a><br>
-          Mr David: <a href="https://t.me/+2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348036321885</a></p>
+            <p class="italic text-slate-500 text-[15px] mt-2">Please note this fee is non-refundable once payment is confirmed.</p>
+            <p class="text-[15px] text-slate-600 leading-[1.7] mt-3">Kindly send your payment receipt to one of our staff below:</p>
+
+            <div class="okdaf-wa-contactgrid">
+              <div class="okdaf-wa-contactcol">
+                <p class="okdaf-wa-contact-label">Option A – WhatsApp</p>
+                <p class="text-[15px] text-slate-600 leading-[1.7]">Mr Michael <span class="italic">[Eazi Creatives Tech Enterprise]</span>: <a href="https://wa.me/2348153877919" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0815 387 7919</a><br>
+                Mr David: <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0803 632 1885</a></p>
+              </div>
+              <div class="okdaf-wa-contactcol">
+                <p class="okdaf-wa-contact-label">Option B – Telegram</p>
+                <p class="text-[15px] text-slate-600 leading-[1.7]">Mr Michael <span class="italic">[Eazi Creatives Tech Enterprise]</span>: <a href="https://t.me/+2348153877919" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348153877919</a><br>
+                Mr David: <a href="https://t.me/+2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348036321885</a></p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- STEP 3 -->
-        <div class="mb-8">
-          <p><strong class="text-navy-800">Step 3:</strong> Once we confirm payment, you'll get:<br>
-          Your copy of the <strong>Free Pathway Guide</strong> and a <strong>WhatsApp Group link</strong> for the <strong>Free Preview Webinar</strong></p>
+        <div class="okdaf-wa-step">
+          <div class="okdaf-wa-step-num">3</div>
+          <div class="okdaf-wa-step-body">
+            <p class="text-[15px] text-slate-600 leading-[1.7]">Once we confirm payment, you'll get:<br>
+            Your copy of the <strong class="text-navy-800">Free Pathway Guide</strong> and a <strong class="text-navy-800">WhatsApp Group link</strong> for the <strong class="text-navy-800">Free Preview Webinar</strong></p>
+          </div>
         </div>
 
-        <!-- QUESTIONS -->
-        <div class="border-t border-slate-200 pt-4">
-          <p class="font-bold text-navy-800">💬 Have Questions? We Are Listening</p>
-          <p>Drop your questions and inquiries here:<br>
-          👉 <a href="https://forms.gle/3ykiYqpgjjYi2WNG7" target="_blank" rel="noopener noreferrer" class="underline text-navy-800 break-words">https://forms.gle/3ykiYqpgjjYi2WNG7</a></p>
-          <p>We'll answer general questions in the group and during the webinar. For anything specific to your own application or payment, message us directly:</p>
-          <p><strong class="text-navy-800">Option A – WhatsApp:</strong><br>
-          Mr David: <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0803 632 1885</a></p>
-          <p><strong class="text-navy-800">Option B – Telegram:</strong><br>
-          Mr David: <a href="https://t.me/+2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348036321885</a></p>
+      </div>
+
+      <!-- QUESTIONS -->
+      <div class="okdaf-wa-questions">
+        <p class="font-bold text-navy-800 text-[15px]">💬 Have Questions? We Are Listening</p>
+        <p class="text-[15px] text-slate-600 leading-[1.7] mt-1">Drop your questions and inquiries here:<br>
+        👉 <a href="https://forms.gle/3ykiYqpgjjYi2WNG7" target="_blank" rel="noopener noreferrer" class="underline text-navy-800 break-words">https://forms.gle/3ykiYqpgjjYi2WNG7</a></p>
+        <p class="text-[15px] text-slate-600 leading-[1.7] mt-2">We'll answer general questions in the group and during the webinar. For anything specific to your own application or payment, message us directly:</p>
+        <div class="okdaf-wa-contactgrid mt-2">
+          <div class="okdaf-wa-contactcol">
+            <p class="okdaf-wa-contact-label">Option A – WhatsApp</p>
+            <p class="text-[15px] text-slate-600 leading-[1.7]">Mr David: <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">0803 632 1885</a></p>
+          </div>
+          <div class="okdaf-wa-contactcol">
+            <p class="okdaf-wa-contact-label">Option B – Telegram</p>
+            <p class="text-[15px] text-slate-600 leading-[1.7]">Mr David: <a href="https://t.me/+2348036321885" target="_blank" rel="noopener noreferrer" class="underline text-navy-800">t.me/+2348036321885</a></p>
+          </div>
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-3 mt-2">
+      <div class="flex flex-col sm:flex-row gap-3 okdaf-wa-cta">
         <a href="https://wa.me/2348153877919" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#075e54;">Chat Mr Michael on WhatsApp</a>
         <a href="https://wa.me/2348036321885" target="_blank" rel="noopener noreferrer" class="flex-1 text-center text-white font-semibold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" style="background:#075e54;">Chat Mr David on WhatsApp</a>
       </div>
@@ -1020,6 +1085,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .okdaf-modal-close:hover { color: #0d1f33; }
     @media (max-width: 480px) { .okdaf-modal-content { padding: 22px 16px; } }
 
+    /* WhatsApp popup — redesigned sections */
+    .okdaf-wa-modal-content { max-width: 640px; }
+    .okdaf-wa-header { border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 20px; padding-right: 24px; }
+    .okdaf-wa-steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+    .okdaf-wa-step { display: flex; gap: 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.875rem; padding: 16px; }
+    .okdaf-wa-step-num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 9999px; background: linear-gradient(135deg,#0d1f33,#1a3d5e 60%,#c9a84c); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .okdaf-wa-step-body { flex: 1; min-width: 0; }
+    .okdaf-wa-step-body a { word-break: break-all; overflow-wrap: anywhere; max-width: 100%; }
+    .okdaf-wa-bankbox { background: #fff; border: 1px dashed #cbd5e1; border-radius: 0.625rem; padding: 12px 14px; margin: 10px 0; }
+    .okdaf-wa-contactgrid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+    @media (min-width: 480px) { .okdaf-wa-contactgrid { grid-template-columns: 1fr 1fr; } }
+    .okdaf-wa-contactcol { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.625rem; padding: 10px 12px; }
+    .okdaf-wa-contact-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #c9a84c; margin-bottom: 4px; }
+    .okdaf-wa-questions { background: #fffbeb; border: 1px solid rgba(212,175,55,0.3); border-radius: 0.875rem; padding: 16px; margin-bottom: 20px; }
+    .okdaf-wa-cta { padding-top: 4px; }
+
     /* Cookie banner */
     .okdaf-cookie-banner { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 998; background: #fff; border-top: 1px solid #e2e8f0; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); padding: 16px; }
     .okdaf-cookie-banner.open { display: block; }
@@ -1028,6 +1109,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .okdaf-cookie-btn { padding: 10px 18px; border-radius: 9999px; font-weight: 600; font-size: 13px; cursor: pointer; border: none; }
     .okdaf-cookie-btn-outline { background: #fff; border: 2px solid #0d1f33; color: #0d1f33; }
     .okdaf-cookie-btn-solid { background: linear-gradient(135deg,#0d1f33,#1a3d5e 60%,#c9a84c); color: #fff; }
+
+    /* Stage "Read more" truncation (How It Works section) */
+    .okdaf-stage-text { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .okdaf-stage-text.okdaf-expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+    .okdaf-readmore-btn { display: inline-block; background: none; border: none; padding: 0; margin: 4px 0 12px; font-size: 13px; font-weight: 600; color: #c9a84c; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .okdaf-readmore-btn:hover { color: #0d1f33; }
 
     /* Mobile CTA icon+text centering fix (Stage buttons) — desktop untouched via display:contents */
     .okdaf-cta-group { display: contents; }
@@ -1039,6 +1126,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Scripts -->
   <script>
+    // "Read more" toggle for the 3 How-It-Works stage descriptions
+    function okdafToggleStage(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var expanded = el.classList.toggle('okdaf-expanded');
+      btn.textContent = expanded ? 'Read less' : 'Read more';
+    }
+
     // WhatsApp popup controls
     function okdafOpenWa() {
   if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'WhatsApp Button' });
